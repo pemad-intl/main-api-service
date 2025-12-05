@@ -94,11 +94,21 @@ class MainApiService
             }
         }
 
-        $bodyForSignature = ""; // GET uses empty body by default
+        $bodyForSignature = "";
         $headers = $this->headers($bodyForSignature);
-        $http = Http::withHeaders($headers)->withOptions(array_merge($this->httpOptions, $options));
 
-        // use Laravel Http::retry
+        $http = Http::withHeaders($headers);
+
+        // ⬅️ Accept JSON only if needed
+        if (($options['accept_json'] ?? false) === true) {
+            $http = $http->acceptJson();
+        }
+
+        // only valid cURL options passed here
+        unset($options['accept_json']);
+
+        $http = $http->withOptions(array_merge($this->httpOptions, $options));
+
         $response = $http->retry($this->retryAttempts, $this->retrySleep)
             ->get($url, $query);
 
