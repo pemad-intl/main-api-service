@@ -16,9 +16,9 @@ MAIN_API_KEY=vAWG...
 Resolve via container:
 $api = app(\Pemad\MainApi\MainApiService::class);
 
-$response = $api->get('/hrms/employees/all', ['limit' => 100]);
+$response = $api->get('/api/user', ['limit' => 100]);
 
-$response = $api->post('/hrms/sync', ['empl' => 69]);
+$response = $api->post('/api/sync', ['empl' => 69]);
 
 ## Artisan test
-php artisan mainapi:test /hrms/health
+php artisan mainapi:test /api/health
