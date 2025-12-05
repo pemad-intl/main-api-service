@@ -1,7 +1,7 @@
 # pemad/main-api-service
 
 ## Install
-composer require pemad/main-api-service
+composer require pemad-intl/main-api-service
 
 ## Publish config
 php artisan vendor:publish --tag=mainapi-config
