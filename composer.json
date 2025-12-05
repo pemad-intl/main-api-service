@@ -1,10 +1,13 @@
 {
   "name": "pemad-intl/main-api-service",
-  "description": "Main API client for Pemad apps (signature, retry, cache, rate-limit).",
+  "description": "Main API client for Pemad apps (signature-based auth, retry, cache, and rate-limit).",
   "type": "library",
   "license": "MIT",
   "authors": [
-    { "name": "Danang Pemad", "email": "danang@pemad.or.id" }
+    {
+      "name": "Danang Pemad",
+      "email": "danang@pemad.or.id"
+    }
   ],
   "autoload": {
     "psr-4": {
@@ -19,10 +22,10 @@
     }
   },
   "require": {
-    "php": "^8.1",
-    "illuminate/support": "^9.0|^10|^11",
-    "illuminate/http": "^9.0|^10|^11",
-    "illuminate/cache": "^9.0|^10|^11"
+    "php": ">=8.0.2",
+    "illuminate/support": "^9.0|^10.0|^11.0",
+    "illuminate/http": "^9.0|^10.0|^11.0",
+    "illuminate/cache": "^9.0|^10.0|^11.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5"
